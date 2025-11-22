@@ -34,7 +34,7 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 py-5">
         {/* Logo */}
         <div className="w-12 h-12 bg-black flex items-center justify-center rounded-full text-white font-bold text-lg hover:bg-blue-600 transition-all cursor-pointer">
-          B
+          H
         </div>
 
         {/* Navbar Icons */}
