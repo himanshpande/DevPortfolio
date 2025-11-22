@@ -8,6 +8,8 @@ import BookShowcase from "./BookShowcase";
 import EducationSection from "./EducationSection";
 import SkillsStatsSection from "./SkillsStatsSection";
 import Footer from "./Footer";
+import ScreenSizeGuard from "./ScreenSizeGuard";
+import ScrollBanner from "./ScrollBanner";
 
 // Wrapper that creates a scroll-based transition where Experience
 // slides up and sits on top of Skills as the user scrolls.
@@ -52,7 +54,7 @@ function SkillsExperienceStack() {
 
         {/* Top layer: Experience (slides up over Skills) */}
         <div
-          className="absolute inset-0 will-change-transform"
+          className="absolute inset-0 will-change-transform hidden min-[639px]:block"
           style={{
             transform: `translateY(${translateY}%)`,
             transition: "transform 0.15s linear",
@@ -69,12 +71,17 @@ function App() {
   return (
     <div>
       <Home />
-      <SkillsExperienceStack />
-      <SkillsBubbles/>
-      <BookShowcase />
-      <EducationSection />
-      <SkillsStatsSection />
-      <Footer />
+      <ScreenSizeGuard>
+        <div className="hidden min-[639px]:block">
+          <SkillsExperienceStack />
+          <SkillsBubbles/>
+          <BookShowcase />
+          <EducationSection />
+          <SkillsStatsSection />
+          <ScrollBanner />
+          <Footer />
+        </div>
+      </ScreenSizeGuard>
     </div>
   );
 }

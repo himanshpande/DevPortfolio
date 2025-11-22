@@ -20,9 +20,9 @@ const books = [
     color: "from-emerald-300 to-teal-500",
   },
   {
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    tag: "UX Design",
+    title: "React Documentation",
+    author: "React",
+    tag: "React Documentation",
     color: "from-rose-300 to-pink-500",
   },
   {
@@ -152,6 +152,7 @@ export default function BookShowcase() {
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-900 via-slate-900/60 to-transparent" />
         </div>
       </div>
+      
     </section>
   );
 }

@@ -2,12 +2,36 @@ import React, { useState } from "react";
 
 export default function Skills() {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-emerald-400 via-emerald-350 to-emerald-500 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 gap-8 lg:gap-12">
+    <>
+    <style>{`
+      @media (min-width: 1000px) and (max-width: 1739px) {
+        .skills-section {
+          justify-content: center !important;
+        }
+        .skills-right-section {
+          width: 100% !important;
+          max-width: 800px !important;
+          text-align: center !important;
+        }
+        .skills-logo-container {
+          justify-content: center !important;
+        }
+        .skills-buttons-container {
+          justify-content: center !important;
+        }
+        .skills-description {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    `}</style>
+    <section className={`skills-section min-h-screen bg-gradient-to-br from-emerald-400 via-emerald-350 to-emerald-500 flex flex-col lg:flex-row items-center justify-between min-[1740px]:justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 gap-8 lg:gap-12 ${isVideoPopupOpen ? 'hidden' : ''}`}>
 
-      {/* Left Content */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center relative">
+      {/* Left Content - Hidden below 1740px */}
+      <div className="hidden min-[1740px]:block w-full lg:w-1/2 flex items-center justify-center relative">
         {/* Increased max width to make GIF larger while keeping same position */}
         <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl h-auto">
 
@@ -98,11 +122,11 @@ export default function Skills() {
         </div>
       </div>
 
-      {/* Right Section */}
-      <div className="w-full lg:w-1/2 text-center lg:text-left">
+      {/* Right Section - Centered when video is hidden */}
+      <div className="skills-right-section w-full lg:w-1/2 min-[1740px]:lg:w-1/2 text-center min-[1740px]:lg:text-left">
 
         {/* Logo */}
-        <div className="flex items-center gap-2 mb-3 sm:mb-4 justify-center lg:justify-start">
+        <div className="skills-logo-container flex items-center gap-2 mb-3 sm:mb-4 justify-center min-[1740px]:lg:justify-start">
           <div className="w-7 sm:w-8 h-7 sm:h-8 bg-gray-900 rounded-full flex items-center justify-center">
             <span className="text-white text-xs sm:text-sm font-bold">👁</span>
           </div>
@@ -117,17 +141,59 @@ export default function Skills() {
         </h1>
 
         {/* Description */}
-        <p className="text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0">
+        <p className="skills-description text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 min-[1740px]:lg:mx-0">
           This App Includes real time tracking of employee activities, attendance monitoring, and productivity analysis to help businesses optimize their workforce management.
         </p>
 
-        {/* CTA Button */}
-        <button className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-300 hover:bg-yellow-400 text-gray-900 font-bold text-sm sm:text-base rounded-full transform hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl">
-          <span>Early Avail</span>
-          <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
-        </button>
+        {/* CTA Buttons */}
+        <div className="skills-buttons-container flex items-center gap-3 sm:gap-4 justify-center min-[1740px]:lg:justify-start flex-wrap">
+          <button className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-300 hover:bg-yellow-400 text-gray-900 font-bold text-sm sm:text-base rounded-full transform hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl">
+            <span>Early Avail</span>
+            <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </button>
+          
+          <button 
+            onClick={() => setIsVideoPopupOpen(true)}
+            className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 hover:bg-gray-800 text-white font-bold text-sm sm:text-base rounded-full transform hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            <span>Preview</span>
+            <span className="transform group-hover:translate-x-1 transition-transform duration-300">▶</span>
+          </button>
+        </div>
 
       </div>
     </section>
+
+    {/* Video Popup Modal */}
+    {isVideoPopupOpen && (
+      <div 
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
+        onClick={() => setIsVideoPopupOpen(false)}
+      >
+        <div 
+          className="relative w-full max-w-6xl max-h-[90vh] flex items-center justify-center"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setIsVideoPopupOpen(false)}
+            className="absolute -top-12 right-0 text-white hover:text-gray-300 text-4xl font-bold transition-colors duration-300 z-10"
+            aria-label="Close video"
+          >
+            ×
+          </button>
+          
+          {/* Video Container */}
+          <div className="relative w-full h-auto rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="/myProduct (2).gif"
+              alt="Employee Tracker preview"
+              className="w-full h-auto rounded-2xl object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }

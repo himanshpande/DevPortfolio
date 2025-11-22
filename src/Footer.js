@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Footer() {
-  const navLinks = ["Work", "Skills", "Books", "About", "Contact"];
+  // const navLinks = ["Work", "Skills", "Books", "About", "Contact"];
 
   return (
     <footer className="relative overflow-hidden bg-slate-950 text-slate-50 pt-14 pb-8 px-4 sm:px-8 mt-24">
@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* pill nav + CTA */}
           <div className="flex flex-col items-start md:items-end gap-4">
-            <div className="inline-flex flex-wrap gap-2 rounded-full bg-slate-900/80 border border-slate-700/70 px-3 py-2">
+            {/* <div className="inline-flex flex-wrap gap-2 rounded-full bg-slate-900/80 border border-slate-700/70 px-3 py-2">
               {navLinks.map((item) => (
                 <button
                   key={item}
@@ -52,14 +52,20 @@ export default function Footer() {
                   {item}
                 </button>
               ))}
-            </div>
+            </div> */}
 
-            <button className="group inline-flex items-center gap-2 rounded-full bg-emerald-300 text-slate-900 font-semibold text-sm sm:text-base px-5 py-2.5 shadow-lg shadow-emerald-500/40 hover:bg-emerald-200 hover:shadow-emerald-300/50 transform hover:scale-105 active:scale-95 transition-all">
-              <span>Let&apos;s build something</span>
+            <a
+              href="https://www.upwork.com/freelancers/~0125e765973f5d980b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-full bg-emerald-300 text-slate-900 font-semibold text-sm sm:text-base px-5 py-2.5 shadow-lg shadow-emerald-500/40 hover:bg-emerald-200 hover:shadow-emerald-300/50 transform hover:scale-105 active:scale-95 transition-all"
+            >
+              <span>Connect with Me</span>
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-emerald-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
                 ↗
               </span>
-            </button>
+            </a>
+
           </div>
         </div>
 
@@ -122,7 +128,7 @@ export default function Footer() {
 
             
           </div>
-          <div className="flex flex-wrap gap-3 sm:gap-4">
+          {/* <div className="flex flex-wrap gap-3 sm:gap-4">
             <span className="hover:text-slate-200 cursor-pointer">
               Dribbble‑style shots
             </span>
@@ -132,7 +138,7 @@ export default function Footer() {
             <span className="hover:text-slate-200 cursor-pointer">
               Resume & case studies
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

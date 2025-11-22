@@ -2,19 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 
 const educationItems = [
   {
-    title: "Bachelor of Computer Science",
-    school: "Your University Name",
-    year: "2018 – 2022",
+    title: "Bachelor of Computer Science And Tecnology",
+    school: "Uttrakhand Technical University",
+    year: "2023 – 2026",
   },
   {
-    title: "Design & UX Specialization",
-    school: "Online / Bootcamp",
-    year: "2022 – 2023",
+    title: "Bachelors of Science",
+    school: "Kumaon University",
+    year: "2021 – 2023",
   },
   {
-    title: "Continuous Learning",
-    school: "Books, courses & side projects",
-    year: "Always",
+    title: "Intern",
+    school: "React Intern",
+    year: "2024",
+  },
+  {
+    title:"Associative Software Engineer",
+    school:"Ui Developer",
+    year:"2024-2025"
   },
 ];
 
@@ -58,11 +63,12 @@ export default function EducationSection() {
             Education
           </div>
           <h2 className="text-2xl sm:text-3xl font-black mb-1">
-            Milestones along my{" "}
+            Highlights of my{" "}
             <span className="bg-gradient-to-r from-yellow-200 to-amber-400 bg-clip-text text-transparent">
-              learning track
+              Education & Experience
             </span>
           </h2>
+
           <p className="text-xs sm:text-sm text-emerald-50/80 max-w-md mx-auto">
             Scroll to slide through the key stops in my education timeline.
           </p>
@@ -112,7 +118,7 @@ export default function EducationSection() {
                     <div className="text-[10px] sm:text-xs text-emerald-100 font-semibold">
                       {item.year}
                     </div>
-                    <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(15,23,42,1)] group-hover:shadow-[0_0_0_6px_rgba(45,212,191,0.9)] flex items-center justify-center text-[11px] sm:text-xs font-bold text-slate-900 transition-shadow duration-200">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(15,23,42,1)] group-hover:shadow-[0_0_0_6px_rgba(45,212,191,0.9)] flex items-center justify-center text-sm sm:text-base font-bold text-slate-900 transition-shadow duration-200">
                       {index + 1}
                     </div>
                   </div>

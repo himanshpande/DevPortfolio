@@ -4,13 +4,16 @@ import { useEffect, useRef, useState } from "react"
 
 export default function SkillsBubbles() {
   const labels = [
-    "Drawing",
-    "Copywriting",
-    "Web Design",
-    "Product Design",
-    "UX Design",
-    "3D Illustration",
-    "Photography",
+    "React",
+    "Documentation",
+    "Tailwind Css",
+    "Bootstrap",
+    "Typescript",
+    "Node JS",
+    "Express Js",
+    "Redux",
+    "System Design",
+    "Full Stack"
   ]
 
   const containerRef = useRef(null)
@@ -22,8 +25,8 @@ export default function SkillsBubbles() {
   const [, setTick] = useState(0)
 
   const FRICTION = 0.995
-  const BOUNCE = 0.82
-  const SPRING = 0.15
+  const BOUNCE = 1
+  const SPRING = 1
   const FPS = 60
 
   useEffect(() => {

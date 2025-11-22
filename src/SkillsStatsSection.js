@@ -2,15 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import ScrollBanner from "./ScrollBanner";
 
 const skills = [
-  { name: "React", level: 22, color: "#22c55e" }, // emerald-500
-  { name: "Tailwind CSS", level: 14, color: "#0ea5e9" }, // sky-500
+  { name: "React", level: 20, color: "#22c55e" }, // emerald-500
+  { name: "Tailwind CSS", level: 10, color: "#0ea5e9" }, // sky-500
   { name: "CSS", level: 10, color: "#6366f1" }, // indigo-500
-  { name: "Bootstrap", level: 8, color: "#a855f7" }, // purple-500
-  { name: "JavaScript", level: 18, color: "#f97316" }, // orange-500
+  { name: "Bootstrap", level: 7, color: "#a855f7" }, // purple-500
+  { name: "JavaScript", level: 16, color: "#f97316" }, // orange-500
   { name: "TypeScript", level: 12, color: "#3b82f6" }, // blue-500
-  { name: "Manual QA", level: 6, color: "#ec4899" }, // pink-500
+  { name: "Manual QA/Unit Testing", level: 6, color: "#ec4899" }, // pink-500
   { name: "Automation", level: 5, color: "#14b8a6" }, // teal-500
-  { name: "Testing & Debugging", level: 5, color: "#eab308" }, // yellow-500
+  { name: "Testing & Debugging", level: 5, color: "#eab308" },
+  { name: "Documentation", level: 7, color: "#eab308" },
+  {name:"Express",level:2,color:"#14b8a6"} 
+  // yellow-500
 ];
 
 const totalLevel = skills.reduce((sum, s) => sum + s.level, 0);
@@ -123,10 +126,10 @@ export default function SkillsStatsSection() {
               scores are based on real projects, not just buzzwords.
             </p>
           </div>
-          <div className="text-xs sm:text-sm text-slate-600">
+          {/* <div className="text-xs sm:text-sm text-slate-600">
             Hover each slice or bar to read more about how I use that skill in
             day-to-day work.
-          </div>
+          </div> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[auto,minmax(0,1.2fr)] gap-8 md:gap-10 items-center">
@@ -265,8 +268,10 @@ export default function SkillsStatsSection() {
       </div>
 
       {/* Animated banner just below Skill snapshot section */}
-      <ScrollBanner />
+      {/* <ScrollBanner /> */}
     </section>
+    
+    
   );
 }
 
