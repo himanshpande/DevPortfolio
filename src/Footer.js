@@ -119,6 +119,8 @@ export default function Footer() {
               Crafted in React & Tailwind — inspired by dashboards, reading logs
               and playful physics.
             </span> */}
+
+            
           </div>
           <div className="flex flex-wrap gap-3 sm:gap-4">
             <span className="hover:text-slate-200 cursor-pointer">
