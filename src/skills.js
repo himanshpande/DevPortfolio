@@ -4,19 +4,19 @@ export default function Skills() {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-emerald-400 via-emerald-350 to-emerald-500 flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-12 sm:py-16 gap-8 lg:gap-12">
+    <section className="min-h-screen bg-gradient-to-br from-emerald-400 via-emerald-350 to-emerald-500 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16 lg:py-20 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
 
       {/* Left Content */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center relative">
+      <div className="w-full md:w-1/2 flex items-center justify-center relative">
         {/* Increased max width to make GIF larger while keeping same position */}
-        <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl h-auto">
+        <div className="relative w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl h-auto">
 
           {/* Main GIF Image */}
-          <div className="relative h-80 sm:h-96 md:h-[420px] md:w-[680px] flex items-center justify-center">
+          <div className="relative h-72 sm:h-80 md:h-96 lg:h-[420px] xl:h-[480px] w-full flex items-center justify-center">
             <img
-              src="/myProduct (1).gif"
+              src="/myProduct (2).gif"
               alt="Employee Tracker preview"
-              className="h-full w-auto rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
+              className="h-full w-auto max-w-full rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-2xl md:shadow-2xl object-cover transform hover:scale-105 transition-transform duration-500"
             />
           </div>
 
@@ -99,30 +99,30 @@ export default function Skills() {
       </div>
 
       {/* Right Section */}
-      <div className="w-full lg:w-1/2 text-center lg:text-left">
+      <div className="w-full md:w-1/2 text-center md:text-left px-4 sm:px-6 md:px-0">
 
         {/* Logo */}
-        <div className="flex items-center gap-2 mb-3 sm:mb-4 justify-center lg:justify-start">
-          <div className="w-7 sm:w-8 h-7 sm:h-8 bg-gray-900 rounded-full flex items-center justify-center">
-            <span className="text-white text-xs sm:text-sm font-bold">👁</span>
+        <div className="flex items-center gap-2 mb-3 sm:mb-4 md:mb-4 justify-center md:justify-start">
+          <div className="w-7 sm:w-8 md:w-8 h-7 sm:h-8 md:h-8 bg-gray-900 rounded-full flex items-center justify-center">
+            <span className="text-white text-xs sm:text-sm md:text-sm font-bold">👁</span>
           </div>
-          <span className="text-gray-900 font-semibold text-base sm:text-lg">Product to launch</span>
+          <span className="text-gray-900 font-semibold text-base sm:text-lg md:text-lg">Product to launch</span>
         </div>
 
-        <div className="text-gray-700 text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Product design</div>
+        <div className="text-gray-700 text-xs sm:text-sm md:text-sm lg:text-base font-semibold mb-2 sm:mb-3 md:mb-3">Product design</div>
 
         {/* Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-4 sm:mb-5 md:mb-6 lg:mb-6 leading-tight">
           Employee Tracker
         </h1>
 
         {/* Description */}
-        <p className="text-gray-800 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0">
+        <p className="text-gray-800 text-sm sm:text-base md:text-base lg:text-lg leading-relaxed mb-6 sm:mb-7 md:mb-8 lg:mb-8 max-w-xl mx-auto md:mx-0 lg:max-w-2xl">
           This App Includes real time tracking of employee activities, attendance monitoring, and productivity analysis to help businesses optimize their workforce management.
         </p>
 
         {/* CTA Button */}
-        <button className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-300 hover:bg-yellow-400 text-gray-900 font-bold text-sm sm:text-base rounded-full transform hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl">
+        <button className="group inline-flex items-center gap-2 sm:gap-3 md:gap-3 px-6 sm:px-8 md:px-8 lg:px-10 py-3 sm:py-4 md:py-4 bg-yellow-300 hover:bg-yellow-400 text-gray-900 font-bold text-sm sm:text-base md:text-base lg:text-lg rounded-full transform hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl">
           <span>Early Avail</span>
           <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
         </button>
