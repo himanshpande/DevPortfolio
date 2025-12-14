@@ -2,18 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 import ScrollBanner from "./ScrollBanner";
 
 const skills = [
-  { name: "React", level: 20, color: "#22c55e" }, // emerald-500
-  { name: "Tailwind CSS", level: 10, color: "#0ea5e9" }, // sky-500
-  { name: "CSS", level: 10, color: "#6366f1" }, // indigo-500
-  { name: "Bootstrap", level: 7, color: "#a855f7" }, // purple-500
-  { name: "JavaScript", level: 16, color: "#f97316" }, // orange-500
-  { name: "TypeScript", level: 12, color: "#3b82f6" }, // blue-500
-  { name: "Manual QA/Unit Testing", level: 6, color: "#ec4899" }, // pink-500
-  { name: "Automation", level: 5, color: "#14b8a6" }, // teal-500
+  { name: "React", level: 20, color: "#22c55e" }, 
+  { name: "Tailwind CSS", level: 10, color: "#0ea5e9" }, 
+  { name: "CSS", level: 10, color: "#6366f1" }, 
+  { name: "Bootstrap", level: 7, color: "#a855f7" }, 
+  { name: "JavaScript", level: 16, color: "#f97316" },
+  { name: "TypeScript", level: 12, color: "#3b82f6" }, 
+  { name: "Manual QA/Unit Testing", level: 6, color: "#ec4899" }, 
+  { name: "Automation", level: 5, color: "#14b8a6" }, 
   { name: "Testing & Debugging", level: 5, color: "#eab308" },
   { name: "Documentation", level: 7, color: "#eab308" },
   {name:"Express",level:2,color:"#14b8a6"} 
-  // yellow-500
+
 ];
 
 const totalLevel = skills.reduce((sum, s) => sum + s.level, 0);
@@ -76,8 +76,6 @@ export default function SkillsStatsSection() {
       const rect = el.getBoundingClientRect();
       const viewportHeight = window.innerHeight || 1;
 
-      // Progress is 0 when the section just enters the viewport
-      // and 1 when it is about to leave.
       const total = rect.height + viewportHeight;
       const rawProgress = (viewportHeight - rect.top) / total;
       const clamped = Math.min(1, Math.max(0, rawProgress));
@@ -106,10 +104,10 @@ export default function SkillsStatsSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-slate-100 py-16 sm:py-20 px-4 sm:px-8"
+      className="bg-slate-100 py-16 sm:py-20 px-4 sm:px-8 relative z-20"
     >
       <div className="max-w-5xl mx-auto text-slate-900">
-        {/* Heading */}
+    
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/40 text-xs sm:text-sm font-semibold mb-2 text-emerald-200">
@@ -126,14 +124,10 @@ export default function SkillsStatsSection() {
               scores are based on real projects, not just buzzwords.
             </p>
           </div>
-          {/* <div className="text-xs sm:text-sm text-slate-600">
-            Hover each slice or bar to read more about how I use that skill in
-            day-to-day work.
-          </div> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-[auto,minmax(0,1.2fr)] gap-8 md:gap-10 items-center">
-          {/* Donut / Pie chart */}
+     
           <div className="flex justify-center">
             <div
               className="relative w-52 h-52 sm:w-60 sm:h-60"
@@ -156,14 +150,12 @@ export default function SkillsStatsSection() {
                   >
                     {slices.map(({ skill, startAngle, endAngle, midAngle }, i) => {
                       const isActive = hoveredIndex === i;
-                      const offset = isActive ? 18 : 0; // push the hovered slice outward
-                      const scaleSlice = isActive ? 1.08 : 1; // and make it slightly larger
+                      const offset = isActive ? 18 : 0; 
+                      const scaleSlice = isActive ? 1.08 : 1; 
                       const rad = (midAngle * Math.PI) / 180;
                       const dx = Math.cos(rad) * offset;
                       const dy = Math.sin(rad) * offset;
 
-                      // Use an SVG <g> transform instead of CSS transforms, which
-                      // behave more reliably inside an SVG.
                       return (
                         <g
                           key={skill.name}
@@ -210,11 +202,11 @@ export default function SkillsStatsSection() {
                     })()}
                   </g>
 
-                  {/* inner cutout */}
+              
                   <circle cx="120" cy="120" r="48" fill="#f9fafb" />
                 </svg>
 
-                {/* center label */}
+           
                 <div className="pointer-events-none absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white/90 flex flex-col items-center justify-center border border-slate-300">
                   <span className="text-[10px] uppercase tracking-[0.14em] text-slate-500">
                     {hoveredIndex != null ? "Skill" : "Focus"}
@@ -234,7 +226,7 @@ export default function SkillsStatsSection() {
             </div>
           </div>
 
-          {/* Legend moved OUTSIDE the circle area so it never hides behind it */}
+     
           <div className="w-full max-w-md mx-auto md:mx-0">
             <div className="grid grid-cols-2 gap-2 text-[11px] sm:text-xs text-slate-800">
               {skills.map((skill, index) => {
@@ -267,8 +259,6 @@ export default function SkillsStatsSection() {
         </div>
       </div>
 
-      {/* Animated banner just below Skill snapshot section */}
-      {/* <ScrollBanner /> */}
     </section>
     
     

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import ComingSoon from "./ComingSoon";
 
 export default function Skills() {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
+
 
   return (
     <>
@@ -145,7 +149,10 @@ export default function Skills() {
 
         {/* CTA Buttons */}
         <div className="skills-buttons-container flex items-center gap-3 sm:gap-4 justify-center min-[1740px]:lg:justify-start flex-wrap">
-          <button className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-300 hover:bg-yellow-400 text-gray-900 font-bold text-sm sm:text-base rounded-full transform hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <button 
+            
+            className="group inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-yellow-300 hover:bg-yellow-400 text-gray-900 font-bold text-sm sm:text-base rounded-full transform hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
             <span>Early Avail</span>
             <span className="transform group-hover:translate-x-1 transition-transform duration-300">→</span>
           </button>

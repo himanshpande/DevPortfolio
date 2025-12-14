@@ -10,6 +10,7 @@ import SkillsStatsSection from "./SkillsStatsSection";
 import Footer from "./Footer";
 import ScreenSizeGuard from "./ScreenSizeGuard";
 import ScrollBanner from "./ScrollBanner";
+import BlogsPage from "./BlogsPage";
 
 // Wrapper that creates a scroll-based transition where Experience
 // slides up and sits on top of Skills as the user scrolls.
@@ -68,20 +69,28 @@ function SkillsExperienceStack() {
 }
 
 function App() {
+  const [showBlogs, setShowBlogs] = useState(false);
+
   return (
     <div>
-      <Home />
-      <ScreenSizeGuard>
-        <div className="hidden min-[639px]:block">
-          <SkillsExperienceStack />
-          <SkillsBubbles/>
-          <BookShowcase />
-          <EducationSection />
-          <SkillsStatsSection />
-          {/* <ScrollBanner /> */}
-          <Footer />
-        </div>
-      </ScreenSizeGuard>
+      {!showBlogs ? (
+        <>
+          <Home onShowBlogs={() => setShowBlogs(true)} />
+          
+            <div className="hidden min-[639px]:block">
+              <SkillsExperienceStack />
+              <SkillsBubbles/>
+              <BookShowcase />
+              <EducationSection />
+              <SkillsStatsSection />
+              {/* <ScrollBanner /> */}
+              <Footer />
+            </div>
+          
+        </>
+      ) : (
+        <BlogsPage onBack={() => setShowBlogs(false)} />
+      )}
     </div>
   );
 }

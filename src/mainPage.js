@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Home() {
+export default function Home({ onShowBlogs }) {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
   const [isScrollHovered, setIsScrollHovered] = useState(false);
   const [hoveredLetter, setHoveredLetter] = useState(null);
@@ -40,9 +40,15 @@ export default function Home() {
         {/* Navbar Icons */}
         <nav className="hidden min-[675px]:flex absolute left-1/2 -translate-x-1/2">
           <div className="flex items-center gap-3 bg-black px-8 py-3 rounded-full">
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <button
                 key={item.id}
+                onClick={() => {
+                  // Third icon (index 2) opens blogs page
+                  if (index === 2 && onShowBlogs) {
+                    onShowBlogs();
+                  }
+                }}
                 className="text-white hover:text-blue-500 transition-all duration-300 transform hover:scale-125 p-2"
               >
                 <SvgIcon path={item.path} />
@@ -53,7 +59,7 @@ export default function Home() {
 
         {/* Social Icons */}
         <div className="hidden min-[639px]:flex items-center gap-4">
-          {socialItems.map((item) => (
+          {socialItems.map((item, index) => (
             item.url ? (
               <a
                 key={item.id}
@@ -67,6 +73,12 @@ export default function Home() {
             ) : (
               <button
                 key={item.id}
+                onClick={() => {
+                  // Third icon (index 2 - blogs/book icon) opens blogs page
+                  if (index === 2 && onShowBlogs) {
+                    onShowBlogs();
+                  }
+                }}
                 className="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-125 p-2"
               >
                 <SvgIcon path={item.path} />
@@ -163,19 +175,14 @@ export default function Home() {
         </button>
       </section>
 
-      {/* FOOTER */}
+   
       <footer className="fixed bottom-8 left-8 text-blue-600 font-semibold cursor-pointer group">
-        {/* <span className="text-xl">✨</span> */}
-        {/* <span className="hidden sm:inline group-hover:underline">
-          Designing through Pixels & Passion
-        </span> */}
       </footer>
 
       <div className="fixed bottom-8 right-8 text-gray-500 text-sm">
         {new Date().toLocaleTimeString()}
       </div>
 
-      {/* ANIMATIONS */}
       <style>{`
         @keyframes slideDown {
           from { opacity: 0; transform: translateY(-30px); }
