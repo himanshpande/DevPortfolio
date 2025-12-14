@@ -15,10 +15,10 @@ export default function Home() {
   ];
 
   const socialItems = [
-    { id: "linkedin", path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 11-4 0 2 2 0 014 0z" },
-    { id: "twitter", path: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7" },
-    { id: "settings", path: "M12 8v4m0 4v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
-    { id: "email", path: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+    { id: "linkedin", path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 11-4 0 2 2 0 014 0z", url: "https://www.linkedin.com/in/himanshu-pandey-" },
+    { id: "github", path: "M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22", url: "https://github.com/himanshpande" },
+    { id: "blogs", path: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253", url: "https://your-blog-url.com" },
+    { id: "messaging", path: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z", url: "https://wa.me/8533839002" },
   ];
 
   const SvgIcon = ({ path }) => (
@@ -54,12 +54,24 @@ export default function Home() {
         {/* Social Icons */}
         <div className="hidden min-[639px]:flex items-center gap-4">
           {socialItems.map((item) => (
-            <button
-              key={item.id}
-              className="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-125 p-2"
-            >
-              <SvgIcon path={item.path} />
-            </button>
+            item.url ? (
+              <a
+                key={item.id}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-125 p-2"
+              >
+                <SvgIcon path={item.path} />
+              </a>
+            ) : (
+              <button
+                key={item.id}
+                className="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-125 p-2"
+              >
+                <SvgIcon path={item.path} />
+              </button>
+            )
           ))}
         </div>
       </header>

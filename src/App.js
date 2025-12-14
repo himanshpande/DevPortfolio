@@ -78,7 +78,7 @@ function App() {
           <BookShowcase />
           <EducationSection />
           <SkillsStatsSection />
-          <ScrollBanner />
+          {/* <ScrollBanner /> */}
           <Footer />
         </div>
       </ScreenSizeGuard>

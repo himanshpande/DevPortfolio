@@ -127,13 +127,11 @@ export default function Skills() {
 
         {/* Logo */}
         <div className="skills-logo-container flex items-center gap-2 mb-3 sm:mb-4 justify-center min-[1740px]:lg:justify-start">
-          <div className="w-7 sm:w-8 h-7 sm:h-8 bg-gray-900 rounded-full flex items-center justify-center">
-            <span className="text-white text-xs sm:text-sm font-bold">👁</span>
-          </div>
+         
           <span className="text-gray-900 font-semibold text-base sm:text-lg">Product to launch</span>
         </div>
 
-        <div className="text-gray-700 text-xs sm:text-sm font-semibold mb-2 sm:mb-3">Product design</div>
+  
 
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
